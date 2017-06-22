@@ -1,0 +1,19 @@
+{
+  "builders":
+  [
+    {
+      "type": "amazon-ebs",
+      "ami_name": "AMI",
+      "region": "us-east-1",
+      "source_ami": "ami-d15a75c7",
+      "instance_type": "m3.medium",
+      "ssh_username": "ubuntu"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [ "echo hello world" ]
+    }
+  ]
+}

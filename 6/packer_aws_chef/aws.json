@@ -1,0 +1,21 @@
+{
+  "builders":
+  [
+    {
+      "type": "amazon-ebs",
+      "ami_name": "test ami 2",
+      "region": "us-east-1",
+      "source_ami": "ami-d15a75c7",
+      "instance_type": "m3.medium",
+      "ssh_username": "ubuntu"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "chef-solo",
+      "cookbook_paths": [ "cookbooks" ],
+      "run_list": ["recipe[apache2]"],
+      "prevent_sudo": false
+    }
+  ]
+}
